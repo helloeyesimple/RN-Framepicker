@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "osx-build-app-android-staging": "cd android; ./gradlew assembleRelease; cd ..",
+    "osx-android-install": "adb install android/app/build/outputs/apk/release/app-release.apk",
+    "osx-android-bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "react": "16.8.3",
